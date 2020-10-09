@@ -1,21 +1,23 @@
-const http = require('http')  // require built-in Node.js http package
 
-// Use hosting values if available, otherwise default 
-const hostname = process.env.hostname || '0.0.0.0' // allow remote access
-const port = process.env.PORT || 3002
+const http = require('http')
 
-// define our server
+// Value for the host server
+//If there is not a value assigned from the host, it will assign the default value
+const hostname = process.env.hostname || '0.0.0.0' // The default value
+//The port that will be use for the server
+const port = process.env.PORT || 3030
+
+// The Server declaration and its details
 const server = http.createServer((req, res) => {
   res.statusCode = 200
   res.setHeader('Content-Type', 'text/plain')
-  res.write('Hello...\n')
-  res.write('Hello...\n')
-  res.end('Hello World! This is text - we can respond with HTML, JSON, and more :)\n')
+  res.write('Yes! I did it!!...\n')
+  res.write('It is working!!\n')
+  res.end('Hello World! This The Assignment has been completed!!\n')
 })
 
-// start listening
-// use the server console to tell user where to find the server
-// use backticks for template literals with embedded expressions
+//The initiation for server listening
+//If the listen is active/ suceeded, the message below will be shown
 server.listen(port, hostname, () => {
   console.log(`Server running at http://localhost:${port}/`)
 })
