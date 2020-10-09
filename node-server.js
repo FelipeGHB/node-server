@@ -13,11 +13,11 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain')
   res.write('Yes! I did it!!...\n')
   res.write('It is working!!\n')
-  res.end('Hello World! This The Assignment has been completed!!\n')
+  res.end('Hello World! The Assignment has been completed!!\n')
 })
 
 //The initiation for server listening
 //If the listen is active/ suceeded, the message below will be shown
 server.listen(port, hostname, () => {
-  console.log(`Server running at http://localhost:${port}/`)
+  console.log(`Server running at http://${hostname}:${port}/`)
 })
